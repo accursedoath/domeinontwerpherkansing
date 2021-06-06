@@ -12,6 +12,7 @@ public class Gebruiker {
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
         this.doet = new ArrayList<>();
+        GebruikerChecker.addGebruiker(this);
     }
 
     public String getGebruikersnaam() {
@@ -29,4 +30,5 @@ public class Gebruiker {
     public void addPrintOpsturing(PrintOpsturing printopsturing){
         this.doet.add(printopsturing);
     }
+
 }
