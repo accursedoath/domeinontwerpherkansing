@@ -12,6 +12,6 @@ public class PostNL implements LocatieDetails {
 
     @Override
     public String getLocatieNaam() {
-        return "model.PostNL";
+        return "PostNL";
     }
 }

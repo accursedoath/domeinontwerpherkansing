@@ -3,7 +3,7 @@ package model;
 public class PrintOpsturing{
     private Gebruiker maker;
     private int hoeveelheid;
-    LocatieDetails locatie;
+    private LocatieDetails locatie;
 
     protected PrintOpsturing(Gebruiker gebruiker, int hoeveelheid, int locatiekeuze){
         if(locatiekeuze == 1 || locatiekeuze == 3) locatie = new PostNL();
@@ -38,9 +38,10 @@ public class PrintOpsturing{
     }
 
     public void printBon(){
-        System.out.println("Maker = " + maker.getGebruikersnaam() + "\r\n" +
+        System.out.println("Maker " + maker.getGebruikersnaam() + "\r\n" + "Doet een printopsturing " +
                 getOrderline() +"\r\n" +
-                "waarvan de totale prijs : " + berekenPrijs() + berekenLocatiePrijs() + "bedraagd \r\n" +
-                "voor " + hoeveelheid + " Vrachtbrieven.");
+                "waarvan de totale prijs : " + (berekenPrijs() + berekenLocatiePrijs()) + " eurocent bedraagd \r\n" +
+                "voor " + hoeveelheid + " Vrachtbrieven. \r\n" +
+                "Deze vrachtbrieven worden bezorgd door " + locatie.getLocatieNaam());
     }
 }

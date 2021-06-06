@@ -8,7 +8,7 @@ public class DHL implements LocatieDetails {
 
     @Override
     public String getLocatieNaam() {
-        return "model.DHL";
+        return "DHL";
     }
 
 }

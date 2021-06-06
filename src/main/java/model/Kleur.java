@@ -13,4 +13,9 @@ public class Kleur extends PrintOpsturing{
     public String getOrderline() {
         return "met kleur papier";
     }
+
+    @Override
+    public double berekenPrijs() {
+        return super.getHoeveelheid() * 30;
+    }
 }
