@@ -1,15 +1,10 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Login {
     private static Login loginsingleton;
     private Gebruiker ingelogdGebruiker;
-    private ArrayList<Gebruiker> slaatop = new ArrayList<>();
-    private GebruikerChecker checker;
 
     private Login(){
-        checker = new GebruikerChecker();
     }
 
     public static Login getInstance() {
@@ -19,11 +14,12 @@ public class Login {
         return loginsingleton;
     }
 
-    public boolean login(Gebruiker gebruiker){
+    public boolean login(String gebruikersnaam,String wachtwoord){
         if(ingelogdGebruiker != null){
             return true;
         }
-        else return checker.checkNaamEnWachtwoord(gebruiker);
+        else ingelogdGebruiker = GebruikerChecker.getInstance().checkNaamEnWachtwoord(gebruikersnaam, wachtwoord);
+            return ingelogdGebruiker != null;
     }
 
     public void logOut(){
@@ -31,7 +27,7 @@ public class Login {
     }
 
     public Gebruiker getIngelogdGebruiker() {
-        return ingelogdGebruiker;
+        return this.ingelogdGebruiker;
     }
 
 }

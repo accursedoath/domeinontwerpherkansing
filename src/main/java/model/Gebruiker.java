@@ -9,10 +9,15 @@ public class Gebruiker {
     private ArrayList<PrintOpsturing> doet;
 
     public Gebruiker(String gebruikersnaam, String wachtwoord, String naam) {
-        this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
         this.doet = new ArrayList<>();
-        GebruikerChecker.addGebruiker(this);
+
+        if(GebruikerChecker.getInstance().CheckZelfdeGebruikersnaam(gebruikersnaam)){
+            this.gebruikersnaam = gebruikersnaam + "x";
+        }
+
+        else this.gebruikersnaam = gebruikersnaam;
+        GebruikerChecker.getInstance().addGebruiker(this);
     }
 
     public String getGebruikersnaam() {
