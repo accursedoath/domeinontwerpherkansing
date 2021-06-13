@@ -13,7 +13,7 @@ public class PrintOpsturing{
     }
 
     public String getOrderline(){
-        return "";
+        return "Sasagar BV";
     }
 
     public static PrintOpsturing maakPrintOpsturing(Gebruiker gebruiker, int hoeveelheid, int locatiekeuze){
@@ -21,7 +21,7 @@ public class PrintOpsturing{
         else return null;
     }
 
-    public double berekenPrijs(){
+    public double berekenPrijs(){ // temporary field , abusing variable (misschien ervoor zorgen dat de prijs in 1 locatie wordt berekent)
         return hoeveelheid * 2;
     }
 

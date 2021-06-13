@@ -11,6 +11,7 @@ public class Gebruiker {
     public Gebruiker(String gebruikersnaam, String wachtwoord, String naam) {
         this.wachtwoord = wachtwoord;
         this.doet = new ArrayList<>();
+        this.naam = naam;
 
         if(GebruikerChecker.getInstance().CheckZelfdeGebruikersnaam(gebruikersnaam)){
             this.gebruikersnaam = gebruikersnaam + "x";
