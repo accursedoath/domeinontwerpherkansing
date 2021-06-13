@@ -9,6 +9,8 @@ public class Main {
 
             log.login("Dreddyon","welkom123");
 
+            System.out.println(log.getIngelogdGebruiker().getNaam() + " is ingelogd");
+
             Scanner scanner = new Scanner(System.in);
             System.out.println("Kies uit de volgende opties \r\n" +
                     "1) Zwart-Wit papier bij PostNl? \r\n" +
@@ -28,6 +30,9 @@ public class Main {
             else printopsturing = Kleur.maakKleur(log.getIngelogdGebruiker(), hoeveelheid, keuze);
 
             printopsturing.printBon();
+            log.logOut();
+            if(log.getIngelogdGebruiker() == null)   System.out.println("u bent uitgelogd");
+
 
         }
     }
